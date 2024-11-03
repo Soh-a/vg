@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fee Management</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to Fee Management</h2>
+        <form id="login-form">
+            <input type="text" id="childName" placeholder="Enter Child's Name (e.g., Kritika1, Kritika2)" required><br>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const childName = document.getElementById('childName').value.trim().toLowerCase();
+
+            if (childName === 'abhinandan') {
+                window.location.href = 'abhinandan.html';
+            } else if (childName === 'kaashvi') {
+                window.location.href = 'kaashvi.html';
+            } else if (childName === 'reeyansh') {
+                window.location.href = 'reeyansh.html';
+            } else if (childName === 'bidisha') {
+                window.location.href = 'bidisha.html';
+            } else if (childName === 'kritika1') {  // For the first Kritika
+                window.location.href = 'kritika1.html';
+            } else if (childName === 'kritika2') {  // For the second Kritika
+                window.location.href = 'kritika2.html';
+            } else if (childName === 'devraj') {
+                window.location.href = 'devraj.html';
+            } else if (childName === 'adhiraj') {
+                window.location.href = 'adhiraj.html';
+            } else if (childName === 'bandit') {
+                window.location.href = 'bandit.html';
+            } else if (childName === 'mouneesha') {
+                window.location.href = 'mouneesha.html';
+            } else {
+                alert("No record found for this child name.");
+            }
+        });
+    </script>
+</body>
+</html>

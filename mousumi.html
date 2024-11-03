@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Management - 2024-2025</title>
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #00796b;
+        }
+        .details {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .fee-table th, .fee-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .fee-table th {
+            background-color: #00796b;
+            color: white;
+        }
+        .fee-table td {
+            background-color: #e0f2f1;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+        .btn.active {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fee Management - Academic Year 2024-2025</h2>
+
+        <div class="details">
+            <p><strong>Student Name:</strong> Abhinandan Thakur</p>
+            <p><strong>Class:</strong> IK 1</p>
+            <p><strong>Monthly Fee:</strong> ₹4700</p>
+            <p><strong>Fee Paid Till:</strong> October</p>
+        </div>
+
+        <div class="details">
+            <p><strong>Student Name:</strong> Kaashvi</p>
+            <p><strong>Class:</strong> IK 1</p>
+            <p><strong>Monthly Fee:</strong> ₹4700</p>
+            <p><strong>Fee Paid Till:</strong> October</p>
+        </div>
+
+        <div class="details">
+            <p><strong>Student Name:</strong> Reeyansh</p>
+            <p><strong>Class:</strong> IK 2</p>
+            <p><strong>Monthly Fee:</strong> ₹4700</p>
+            <p><strong>Fee Paid Till:</strong> August</p>
+        </div>
+
+        <div class="details">
+            <p><strong>Student Name:</strong> Bidisha</p>
+            <p><strong>Class:</strong> IK 1</p>
+            <p><strong>Monthly Fee:</strong> ₹1200</p>
+            <p><strong>Fee Paid Till:</strong> October</p>
+        </div>
+
+        <br>
+        <!-- Payment button -->
+        <form id="payment-form">
+            <button type="button" class="btn" id="pay-btn">Proceed to Pay</button>
+            <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                data-payment_button_id="pl_P62bRZrL46fYP0" async>
+            </script>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('pay-btn').addEventListener('click', function() {
+            // Trigger Razorpay payment and redirect to home page
+            alert("Redirecting to payment...");
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

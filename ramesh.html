@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Management - Ramesh</title>
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #00796b;
+        }
+        .details {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .fee-table th, .fee-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .fee-table th {
+            background-color: #00796b;
+            color: white;
+        }
+        .fee-table td {
+            background-color: #e0f2f1;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+        .btn.active {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fee Management - Academic Year 2024-2025</h2>
+        <div class="details">
+            <p><strong>Student Name:</strong> Ramesh</p>
+            <p><strong>Class:</strong> 3</p>
+            <p><strong>Total Fee:</strong> ₹30,000</p>
+            <p><strong>Monthly Fee:</strong> ₹1,200</p>
+        </div>
+
+        <h3>Fee Payment History</h3>
+        <table class="fee-table">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>January</td>
+                    <td>Paid</td>
+                </tr>
+                <tr>
+                    <td>February</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>March</td>
+                    <td>Paid</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <!-- Payment button -->
+        <form id="payment-form">
+            <button type="button" class="btn" id="pay-btn">Proceed to Pay</button>
+            <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                data-payment_button_id="pl_P62bRZrL46fYP0" async>
+            </script>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('pay-btn').addEventListener('click', function() {
+            // Trigger Razorpay payment and redirect to home page
+            alert("Redirecting to payment...");
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

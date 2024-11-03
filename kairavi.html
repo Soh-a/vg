@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Management - kairavi</title>
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #00796b;
+        }
+        .details {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            display: none;
+        }
+        .fee-table th, .fee-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .fee-table th {
+            background-color: #00796b;
+            color: white;
+        }
+        .fee-table td {
+            background-color: #e0f2f1;
+        }
+        .btn {
+            background-color: #00796b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+        .btn.disabled {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fee Management - Academic Year 2024-2025</h2>
+        <div class="details">
+            <p><strong>Student Name:</strong>  kairavi</p>
+            <p><strong>Class:</strong> IK 2</p>
+            <p><strong>Monthly Fee:</strong> ₹1,200 </p>
+        </div>
+
+        <h3>Fee Payment History</h3>
+        <button onclick="toggleTable()">Show Fee Table</button>
+        <table class="fee-table" id="feeTable">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Status</th>
+                    <th>Select to Pay</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Payment history from January 2024 to March 2025 -->
+                <tr><td>January 2024</td><td>Paid</td><td><input type="checkbox" disabled></td></tr>
+                <tr><td>February 2024</td><td>Paid</td><td><input type="checkbox" disabled></td></tr>
+                <tr><td>March 2024</td><td>Paid</td><td><input type="checkbox" disabled></td></tr>
+                <tr><td>April 2024</td><td>Paid</td><td><input type="checkbox" disabled></td></tr>
+                <tr><td>May 2024</td><td>Paid</td><td><input type="checkbox" disabled></td></tr>
+                <tr><td>June 2024</td><td>Paid</td><td><input type="checkbox" disabled></td></tr>
+                <tr><td>July 2024</td><td>Paid</td><td><input type="checkbox" disabled></td></tr>
+                <tr><td>August 2024</td><td>Paid</td><td><input type="checkbox" disabled></td></tr>
+                <tr><td>September 2024</td><td>Paid</td><td><input type="checkbox" disabled></td></tr>
+                <tr><td>October 2024</td><td>Paid</td><td><input type="checkbox" disabled></td></tr>
+                <tr><td>November 2024</td><td>Paid</td><td><input type="checkbox" disabled></td></tr>
+                <tr><td>December 2024</td><td>Pending</td><td><input type="checkbox" id="decCheck" onclick="enablePayButton()"></td></tr>
+                <tr><td>January 2025</td><td>Pending</td><td><input type="checkbox" id="jan25Check" onclick="enablePayButton()"></td></tr>
+                <tr><td>February 2025</td><td>Pending</td><td><input type="checkbox" id="feb25Check" onclick="enablePayButton()"></td></tr>
+                <tr><td>March 2025</td><td>Pending</td><td><input type="checkbox" id="mar25Check" onclick="enablePayButton()"></td></tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <!-- Proceed to Pay button, hidden by default -->
+        <button id="proceedToPay" class="btn" onclick="redirectToPay()">Proceed to Pay</button>
+    </div>
+
+    <script>
+        function toggleTable() {
+            var table = document.getElementById('feeTable');
+            table.style.display = table.style.display === 'none' ? 'table' : 'none';
+        }
+
+        function enablePayButton() {
+            var decCheck = document.getElementById('decCheck').checked;
+            var jan25Check = document.getElementById('jan25Check').checked;
+            var feb25Check = document.getElementById('feb25Check').checked;
+            var mar25Check = document.getElementById('mar25Check').checked;
+
+            var proceedButton = document.getElementById('proceedToPay');
+
+            // If any pending month is selected, show the "Proceed to Pay" button
+            if ( decCheck || jan25Check || feb25Check || mar25Check) {
+                proceedButton.style.display = 'block';
+            } else {
+                proceedButton.style.display = 'none';
+            }
+        }
+
+        function redirectToPay() {
+            window.location.href = "https://rzp.io/rzp/X0xOyXZ";
+        }
+    </script>
+</body>
+</html>
+
+        
